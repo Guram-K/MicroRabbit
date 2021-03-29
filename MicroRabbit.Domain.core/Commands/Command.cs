@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MicroRabbit.Domain.core.Events;
+using System;
 
 namespace MicroRabbit.Domain.core
 {
