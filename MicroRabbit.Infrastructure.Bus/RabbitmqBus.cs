@@ -19,17 +19,21 @@ namespace MicroRabbit.Infrastructure.Bus
         private readonly Dictionary<string, List<Type>> _handlers;
         private readonly List<Type> _eventTypes;
 
-        public RabbitmqBus(/*IMediator mediator, List<Type> eventTypes*/)
+        public int x;
+        public RabbitmqBus(IMediator mediator)
         {
-            //_eventTypes = new List<Type>();
-            //_handlers = new Dictionary<string, List<Type>>();
-
+            _eventTypes = new List<Type>();
+            _handlers = new Dictionary<string, List<Type>>();
+            _mediator = mediator;
         }
 
-        public Task SendCommand<T>(T command) where T : Command
-        {
-            return _mediator.Send(command); 
-        }
+        //public Task SendCommand<T>(T command) where T : Command
+        //{
+        //    x = 1;
+        //    Publish(new TransferCreatedEvent(request.From, request.To, request.Amount));
+
+        //    return _mediator.Send(command); 
+        //}
 
         public void Publish<T>(T @event) where T : Event
         {
