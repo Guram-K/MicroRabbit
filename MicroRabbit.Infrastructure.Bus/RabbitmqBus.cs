@@ -27,13 +27,13 @@ namespace MicroRabbit.Infrastructure.Bus
             _mediator = mediator;
         }
 
-        //public Task SendCommand<T>(T command) where T : Command
-        //{
-        //    x = 1;
-        //    Publish(new TransferCreatedEvent(request.From, request.To, request.Amount));
+        public Task SendCommand<T>(T command) where T : Command
+        {
+            //x = 1;
+            //Publish(new TransferCreatedEvent(request.From, request.To, request.Amount));
 
-        //    return _mediator.Send(command); 
-        //}
+            return _mediator.Send(command); 
+        }
 
         public void Publish<T>(T @event) where T : Event
         {
